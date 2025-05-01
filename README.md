@@ -1,5 +1,11 @@
 # 4DVST-Projet
 
+## Setup du projet
+Une fois le repo installé ou cloné : 
+- Créez un environnement virtuel avec `python -m venv venv`
+- Activez-le puis retourner à la racine du projet
+- Installez les librairies du projet `pip install -r requirements.txt`
+
 ## Objectif du projet
 En se basant sur différents jeux de données, nous cherchons à illustrer la corrélation qu'il peut y avoir entre le réchauffement climatique, la consommation d'énergie et la vente de véhicule. 
 
