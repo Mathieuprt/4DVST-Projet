@@ -28,3 +28,15 @@ Codebook pour le dataset consommation énergie -> https://github.com/owid/energy
 
 ### Car Sales dataset
 Le dataset original étant relativement propre, nous avons seulement décidé de modifier sa structure pour utiliser les années en tant qu'index. Nous avons désormais un dataset avec les années en lignes (une ligne par année), les pays en colonnes et les ventes en valeurs
+
+## Lancer MetaBase
+
+### Démarrer les conteneurs avec Docker :
+```bash
+docker-compose up
+```
+
+### Accéder à l’interface web :
+- **URL :** [http://localhost:3000](http://localhost:3000)
+- **Nom d'utilisateur :** `loise.talluau@supinfo.com`
+- **Mot de passe :** `4dvst!`
