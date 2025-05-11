@@ -13,8 +13,6 @@ En se basant sur différents jeux de données, nous cherchons à illustrer la co
 
 Ventes de voitures pour particuliers -> https://www.kaggle.com/datasets/sukhmandeepsinghbrar/total-worldwide-passenger-cars-sales
 Consommation d'énergie dans le monde -> https://www.kaggle.com/datasets/pralabhpoudel/world-energy-consumption
-
-
 Codebook pour le dataset consommation énergie -> https://github.com/owid/energy-data/blob/master/owid-energy-codebook.csv
 
 ## Roadmap 
