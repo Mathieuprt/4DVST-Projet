@@ -14,8 +14,6 @@ services:
       MB_DB_HOST: postgres
     depends_on:
       - postgres
-    volumes:
-      - metabase-data:/metabase-data
 
   postgres:
     image: postgres:13
@@ -29,6 +27,15 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  restore:
+    image: postgres:13
+    volumes:
+      - ./backup/metabase_backup.sql:/backup/metabase_backup.sql
+    depends_on:
+      - postgres
+    entrypoint: ["sh", "-c", "psql -U metabase -d metabase_db -h postgres -f /backup/metabase_backup.sql"]
+    environment:
+      PGPASSWORD: metabase
+
 volumes:
-  metabase-data:
   pgdata:
