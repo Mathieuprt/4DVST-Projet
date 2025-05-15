@@ -29,11 +29,18 @@ services:
 
   restore:
     image: postgres:13
-    volumes:
-      - ./backup/metabase_backup.sql:/backup/metabase_backup.sql
     depends_on:
       - postgres
-    entrypoint: ["sh", "-c", "psql -U metabase -d metabase_db -h postgres -f /backup/metabase_backup.sql"]
+    volumes:
+      - ./backup/metabase_backup.sql:/backup/metabase_backup.sql
+    entrypoint: >
+      sh -c "sleep 5 &&
+             if [ $(psql -U metabase -h postgres -d metabase_db -tAc 'SELECT COUNT(*) FROM core_user') = '0' ]; then
+               echo 'Base vide, restauration en cours...';
+               psql -U metabase -h postgres -d metabase_db -f /backup/metabase_backup.sql;
+             else
+               echo 'Base déjà initialisée, restauration ignorée.';
+             fi"
     environment:
       PGPASSWORD: metabase
 
